@@ -182,3 +182,60 @@ function win() {
         alert('You Win!');
     }
 }
+
+//listen for buttons pressed
+const up = document.getElementById('up');
+const down = document.getElementById('down');
+const left = document.getElementById('left');
+const right = document.getElementById('right');
+
+up.addEventListener('click', () => {
+    moveTiles('up');
+    mergeTiles('up');
+    moveTiles('up');
+    addRandomTile();
+    render();
+    win();
+});
+
+down.addEventListener('click', () => {
+    moveTiles('down');
+    mergeTiles('down');
+    moveTiles('down');
+    addRandomTile();
+    render();
+    win();
+});
+
+left.addEventListener('click', () => {
+    moveTiles('left');
+    mergeTiles('left');
+    moveTiles('left');
+    addRandomTile();
+    render();
+    win();
+});
+
+right.addEventListener('click', () => {
+    moveTiles('right');
+    mergeTiles('right');
+    moveTiles('right');
+    addRandomTile();
+    render();
+    win();
+});
+
+//lose
+function lose() {
+    let lose = false;
+    for (let row = 0; row < board.length; row++) {
+        for (let col = 0; col < board.length - 1; col++) {
+            if (board[row][col] === 0) {
+                lose = true;
+            }
+        }
+    }
+    if (!lose) {
+        alert('You Lose!');
+    }
+}

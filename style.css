@@ -89,3 +89,54 @@
 .tile-2048 {
     background-color: #5bed2e;
 }
+
+#touchControls {
+    opacity: 1;
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: #f7f7f7;
+    box-shadow: 0 2px 4px rgba(100, 100, 100, 0.658);
+    margin-top: 20px;
+    left: 40%;
+    top: 10px;
+}
+
+#touchControls button {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    border-radius: 50%;
+    background-color: #4CAF50;
+    transition: 0.2s ease;
+}
+
+#touchControls button:hover {
+    background-color: #3e8e41;
+}
+
+#up {
+    top: 0px;
+}
+
+#down {
+    bottom: 0px;
+}
+
+#left {
+    left: 0px;
+}
+
+#right {
+    right: 0px;
+}
+
+@media screen and (max-width: 800px) {
+    #touchControls button {
+        display: block;
+    }
+}
