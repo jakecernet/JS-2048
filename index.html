@@ -7,16 +7,23 @@
 </head>
 
 <body>
+    <div id="title">
+        <h1>2048</h1>
+    </div>
     <div id="board"></div>
     <div id="scoreboard">
         <a id="score">0</a>
         <div id="best">0</div>
     </div>
     <div id="touchControls">
-        <button id="up">UP</button>
-        <button id="down">DOWN</button>
-        <button id="left">LEFT</button>
-        <button id="right">RIGHT</button>
+        <div class="mobile">
+            <div class="up"><button id="up">&uarr;</button></div>
+            <div class="lr">
+                <div class="left"><button id="left">&larr;</button></div>
+                <div class="right"><button id="right">&rarr;</button></div>
+            </div>
+            <div class="down"><button id="down">&darr;</button></div>
+        </div>
     </div>
     <script src="script.js"></script>
 </body>

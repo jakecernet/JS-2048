@@ -3,6 +3,8 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    align-items: center;
+    justify-content: center;
 }
 
 #board {
@@ -91,32 +93,31 @@
 }
 
 #touchControls {
-    opacity: 1;
-    width: 200px;
-    height: 200px;
-    border-radius: 50%;
-    position: relative;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    background-color: #f7f7f7;
-    box-shadow: 0 2px 4px rgba(100, 100, 100, 0.658);
+    display: block;
+    bottom: 0px;
     margin-top: 20px;
-    left: 40%;
-    top: 10px;
+    border-radius: 5px;
+    top: 500px;
+    align-items: center;
+    justify-content: center;
+
 }
 
 #touchControls button {
-    width: 60px;
-    height: 60px;
-    position: absolute;
-    border-radius: 50%;
-    background-color: #4CAF50;
-    transition: 0.2s ease;
+    border: none;
+    border-radius: 5px;
+    background-color: #109121;
+    font-size: 30px;
+    font-weight: bold;
+    color: #000;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    height: 50px;
+    width: 100px;
 }
 
 #touchControls button:hover {
-    background-color: #3e8e41;
+    background-color: #0d6e1a;
 }
 
 #up {
@@ -135,8 +136,88 @@
     right: 0px;
 }
 
-@media screen and (max-width: 800px) {
-    #touchControls button {
-        display: block;
+@media screen and (max-width: 900px) {
+    .mobile {
+        opacity: 1;
     }
+}
+
+#game-over {
+    display: block;
+    font-size: 50px;
+    color: red;
+    font-weight: bold;
+    margin-top: -530px;
+    font-family: games;
+}
+
+#score {
+    display: block;
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#score-value {
+    display: inline-block;
+    font-size: 20px;
+    color: #000;
+    font-weight: bold;
+    font-family: games;
+}
+
+.lr {
+    display: flex;
+}
+
+.up {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.down {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+.right {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 50px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+#title {
+    font-size: 50px;
+    color: #000;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
+#title h1 {
+    font-size: 50px;
+    color: #000;
+    font-weight: bold;
+    margin-top: 20px;
+    text-align: center;
 }
