@@ -1,3 +1,8 @@
+:root {
+    --text: #fff;
+    --border: #fff;
+}
+
 * {
     margin: 0;
     padding: 0;
@@ -7,12 +12,32 @@
     justify-content: center;
 }
 
+body {
+    background: linear-gradient(130deg, #021230 0%, #000200 100%);
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+h1 {
+    color: var(--text);
+    font-size: 50px;
+    font-weight: bold;
+    text-align: center;
+    padding: 20px;
+}
+
 #board {
     width: 400px;
     height: 400px;
     position: relative;
     margin: 20px auto;
-    border: 2px solid black;
+    border: 2px solid var(--border);
 }
 
 #board .row {
@@ -21,25 +46,13 @@
     position: relative;
 }
 
-#score {
-    width: 400px;
-    height: 100px;
-    margin: 20px auto;
-    border: 2px solid black;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    font-size: 36px;
-    font-weight: bold;
-}
-
 .tile {
     width: 100px;
     height: 100px;
     position: absolute;
     top: 0;
     left: 0;
-    border: 2px solid black;
+    border: 2px solid var(--border);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -49,7 +62,7 @@
 }
 
 .tile-2 {
-    background-color: #e0cebc;
+    background-color: #d8c0a7;
 }
 
 .tile-4 {
@@ -92,132 +105,43 @@
     background-color: #5bed2e;
 }
 
-#touchControls {
-    display: block;
-    bottom: 0px;
-    margin-top: 20px;
-    border-radius: 5px;
-    top: 500px;
-    align-items: center;
-    justify-content: center;
-
+.mobile{
+    display: none;
 }
 
-#touchControls button {
+button {
     border: none;
     border-radius: 5px;
     background-color: #109121;
     font-size: 30px;
     font-weight: bold;
-    color: #000;
     cursor: pointer;
-    transition: background-color 0.3s ease;
     height: 50px;
-    width: 100px;
+    width: 80px;
+    margin: 10px;
 }
 
-#touchControls button:hover {
+button:hover {
     background-color: #0d6e1a;
 }
 
-#up {
-    top: 0px;
-}
-
-#down {
-    bottom: 0px;
-}
-
-#left {
-    left: 0px;
-}
-
-#right {
-    right: 0px;
-}
-
-@media screen and (max-width: 900px) {
+@media screen and (max-width: 1024px) {
     .mobile {
-        opacity: 1;
+        display: block;
     }
-}
-
-#game-over {
-    display: block;
-    font-size: 50px;
-    color: red;
-    font-weight: bold;
-    margin-top: -530px;
-    font-family: games;
-}
-
-#score {
-    display: block;
-    font-size: 20px;
-    color: #000;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-#score-value {
-    display: inline-block;
-    font-size: 20px;
-    color: #000;
-    font-weight: bold;
-    font-family: games;
 }
 
 .lr {
     display: flex;
+    flex-direction: row;
 }
 
-.up {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 50px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.down {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 50px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-.left {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    height: 50px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
+.up,
+.down,
+.left,
 .right {
     display: flex;
     flex-direction: column;
     justify-content: center;
     height: 50px;
-    margin-top: 5px;
-    margin-bottom: 5px;
-}
-
-#title {
-    font-size: 50px;
-    color: #000;
-    font-weight: bold;
-    margin-top: 20px;
-}
-
-#title h1 {
-    font-size: 50px;
-    color: #000;
-    font-weight: bold;
-    margin-top: 20px;
-    text-align: center;
 }
