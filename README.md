@@ -1,2 +1,3 @@
 # JS-2048
- 2048 game in JavaScript.
+
+2048 game in JavaScript.

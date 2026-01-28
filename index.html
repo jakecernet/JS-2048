@@ -1,27 +1,32 @@
-<!DOCTYPE html>
+<!doctype html>
 <html>
-	<head>
-		<title>2048</title>
-		<link rel="stylesheet" type="text/css" href="style.css" />
-		<meta
-			name="viewport"
-			content="width=device-width, initial-scale=1.0, user-scalable=no" />
-		<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	</head>
+  <head>
+    <title>2048</title>
+    <link rel="stylesheet" type="text/css" href="style.css" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, user-scalable=no"
+    />
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  </head>
 
-	<body>
-		<div>
-			<h1>2048</h1>
-		</div>
-		<div id="board"></div>
-		<div class="mobile">
-			<div class="up"><button id="up">&uarr;</button></div>
-			<div class="lr">
-				<div class="left"><button id="left">&larr;</button></div>
-				<div class="right"><button id="right">&rarr;</button></div>
-			</div>
-			<div class="down"><button id="down">&darr;</button></div>
-		</div>
-		<script src="script.js"></script>
-	</body>
+  <body>
+    <div>
+      <h1>2048</h1>
+      <div class="score-container">Score: <span id="score">0</span></div>
+    </div>
+    <div id="board"></div>
+    <div class="controls">
+      <button id="reset" class="reset-btn">New Game</button>
+    </div>
+    <div class="mobile">
+      <div class="up"><button id="up">&uarr;</button></div>
+      <div class="lr">
+        <div class="left"><button id="left">&larr;</button></div>
+        <div class="right"><button id="right">&rarr;</button></div>
+      </div>
+      <div class="down"><button id="down">&darr;</button></div>
+    </div>
+    <script src="script.js"></script>
+  </body>
 </html>

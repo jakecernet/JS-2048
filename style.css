@@ -1,6 +1,8 @@
 :root {
     --text: #fff;
-    --border: #fff;
+    --border: #bbada0;
+    --board-bg: #bbada0;
+    --empty-tile: #cdc1b4;
 }
 
 * {
@@ -8,8 +10,6 @@
     padding: 0;
     box-sizing: border-box;
     font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    align-items: center;
-    justify-content: center;
 }
 
 body {
@@ -18,6 +18,7 @@ body {
     background-size: cover;
     background-position: center;
     background-attachment: fixed;
+    min-height: 100vh;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -32,108 +33,187 @@ h1 {
     padding: 20px;
 }
 
+.score-container {
+    color: var(--text);
+    font-size: 24px;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
 #board {
     width: 400px;
     height: 400px;
     position: relative;
     margin: 20px auto;
-    border: 2px solid var(--border);
-}
-
-#board .row {
-    width: 100%;
-    height: 100px;
-    position: relative;
+    border-radius: 6px;
 }
 
 .tile {
-    width: 100px;
-    height: 100px;
+    width: 95px;
+    height: 95px;
     position: absolute;
-    top: 0;
-    left: 0;
-    border: 2px solid var(--border);
+    border-radius: 3px;
     display: flex;
     justify-content: center;
     align-items: center;
     font-size: 36px;
-    font-weight: bold;
-    color: white;
+    color: #776e65;
+    background-color: var(--empty-tile);
 }
 
 .tile-2 {
-    background-color: #d8c0a7;
+    background-color: #eee4da;
+    color: #776e65;
 }
 
 .tile-4 {
-    background-color: #e9c480;
+    background-color: #ede0c8;
+    color: #776e65;
 }
 
 .tile-8 {
-    background-color: #ee9f5b;
+    background-color: #f2b179;
+    color: #f9f6f2;
 }
 
 .tile-16 {
-    background-color: #e67c43;
+    background-color: #f59563;
+    color: #f9f6f2;
 }
 
 .tile-32 {
-    background-color: #e45633;
+    background-color: #f67c5f;
+    color: #f9f6f2;
 }
 
 .tile-64 {
-    background-color: #ec411a;
+    background-color: #f65e3b;
+    color: #f9f6f2;
 }
 
 .tile-128 {
-    background-color: #e7bd3f;
+    background-color: #edcf72;
+    color: #f9f6f2;
+    font-size: 32px;
 }
 
 .tile-256 {
-    background-color: #dbaf1f;
+    background-color: #edcc61;
+    color: #f9f6f2;
+    font-size: 32px;
 }
 
 .tile-512 {
-    background-color: #d3a408;
+    background-color: #edc850;
+    color: #f9f6f2;
+    font-size: 32px;
 }
 
 .tile-1024 {
-    background-color: #ffc400;
+    background-color: #edc53f;
+    color: #f9f6f2;
+    font-size: 28px;
 }
 
 .tile-2048 {
-    background-color: #5bed2e;
+    background-color: #edc22e;
+    color: #f9f6f2;
+    font-size: 28px;
+    box-shadow: 0 0 30px 10px rgba(243, 215, 116, 0.8);
 }
 
-.mobile{
+.tile-4096 {
+    background-color: #3c3a32;
+    color: #f9f6f2;
+    font-size: 28px;
+}
+
+.tile-8192 {
+    background-color: #3c3a32;
+    color: #f9f6f2;
+    font-size: 28px;
+}
+
+.reset-btn {
+    border: none;
+    border-radius: 5px;
+    background-color: #8f7a66;
+    color: #f9f6f2;
+    font-size: 15px;
+    cursor: pointer;
+    padding: 5px;
+}
+
+.reset-btn:hover {
+    background-color: #9f8b77;
+}
+
+.mobile {
     display: none;
+    margin-top: 20px;
 }
 
 button {
     border: none;
     border-radius: 5px;
-    background-color: #109121;
+    background-color: #8f7a66;
+    color: #f9f6f2;
     font-size: 30px;
     font-weight: bold;
     cursor: pointer;
     height: 50px;
     width: 80px;
-    margin: 10px;
+    margin: 5px;
+    transition: background-color 0.2s;
 }
 
 button:hover {
-    background-color: #0d6e1a;
+    background-color: #9f8b77;
+}
+
+button:active {
+    background-color: #7f6a56;
+}
+
+@media screen and (max-width: 500px) {
+    #board {
+        width: 320px;
+        height: 320px;
+        padding: 8px;
+    }
+
+    .tile {
+        width: 72px;
+        height: 72px;
+        font-size: 28px;
+    }
+
+    .tile-128, .tile-256, .tile-512 {
+        font-size: 24px;
+    }
+
+    .tile-1024, .tile-2048, .tile-4096, .tile-8192 {
+        font-size: 20px;
+    }
+
+    h1 {
+        font-size: 36px;
+    }
 }
 
 @media screen and (max-width: 1024px) {
     .mobile {
-        display: block;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
     }
 }
 
 .lr {
     display: flex;
     flex-direction: row;
+    justify-content: center;
 }
 
 .up,
@@ -143,5 +223,5 @@ button:hover {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    height: 50px;
+    align-items: center;
 }
